@@ -1,13 +1,26 @@
 <template>
-<v-app>
-  <v-app-bar app></v-app-bar>
+  <!-- App.vue -->
+  <v-app>
 
-  <v-main>
-    <v-container>
-      Hello World
-    </v-container>
-  </v-main>
-</v-app>
+    <v-app-bar app>
+      <img @click="$router.push({ path: '/' })" id="starwars-logo" src="http://imageshack.com/a/img922/3783/oyvsRd.png">
+    </v-app-bar>
+
+    <!-- Sizes your content based upon application components -->
+    <v-main>
+
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid>
+
+        <!-- If using vue-router -->
+        <router-view></router-view>
+      </v-container>
+    </v-main>
+
+    <v-footer app>
+      <!-- -->
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
@@ -20,3 +33,16 @@ export default {
   }),
 };
 </script>
+
+<style>
+#starwars-logo {
+  width: 150px;
+  height: 90px;
+  position: relative;
+  left: calc(50% - 100px);
+}
+
+#starwars-logo:hover {
+  cursor: pointer;
+}
+</style>
